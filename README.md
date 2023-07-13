@@ -1,3 +1,5 @@
+Forked from https://github.com/airbnb/javascript
+
 # Airbnb JavaScript Style Guide() {
 
 *A mostly reasonable approach to JavaScript*
