@@ -2,21 +2,9 @@
 
 *A mostly reasonable approach to JavaScript*
 
-> **Note**: this guide assumes you are using [Babel](https://babeljs.io), and requires that you use [babel-preset-airbnb](https://npmjs.com/babel-preset-airbnb) or the equivalent. It also assumes you are installing shims/polyfills in your app, with [airbnb-browser-shims](https://npmjs.com/airbnb-browser-shims) or the equivalent.
+Credits: https://github.com/airbnb/javascript
 
-[![Downloads](https://img.shields.io/npm/dm/eslint-config-airbnb.svg)](https://www.npmjs.com/package/eslint-config-airbnb)
-[![Downloads](https://img.shields.io/npm/dm/eslint-config-airbnb-base.svg)](https://www.npmjs.com/package/eslint-config-airbnb-base)
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/airbnb/javascript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-This guide is available in other languages too. See [Translation](#translation)
-
-Other Style Guides
-
-  - [ES5 (Deprecated)](https://github.com/airbnb/javascript/tree/es5-deprecated/es5)
-  - [React](react/)
-  - [CSS-in-JavaScript](css-in-javascript/)
-  - [CSS & Sass](https://github.com/airbnb/css)
-  - [Ruby](https://github.com/airbnb/ruby)
 
 ## Table of Contents
 
@@ -659,7 +647,7 @@ Other Style Guides
   <a name="functions--declarations"></a><a name="7.1"></a>
   - [7.1](#functions--declarations) Use named function expressions instead of function declarations. eslint: [`func-style`](https://eslint.org/docs/rules/func-style), [`func-names`](https://eslint.org/docs/latest/rules/func-names)
 
-    > Why? Function declarations are hoisted, which means that it’s easy - too easy - to reference the function before it is defined in the file. This harms readability and maintainability. If you find that a function’s definition is large or complex enough that it is interfering with understanding the rest of the file, then perhaps it’s time to extract it to its own module! Don’t forget to explicitly name the expression, regardless of whether or not the name is inferred from the containing variable (which is often the case in modern browsers or when using compilers such as Babel). This eliminates any assumptions made about the Error’s call stack. ([Discussion](https://github.com/airbnb/javascript/issues/794))
+    > Why? Function declarations are hoisted, which means that it’s easy - too easy - to reference the function before it is defined in the file. This harms readability and maintainability. If you find that a function’s definition is large or complex enough that it is interfering with understanding the rest of the file, then perhaps it’s time to extract it to its own module! Don’t forget to explicitly name the expression, regardless of whether or not the name is inferred from the containing variable (which is often the case in modern browsers or when using compilers such as Babel). This eliminates any assumptions made about the Error’s call stack.
 
     ```javascript
     // bad
@@ -1309,15 +1297,15 @@ Other Style Guides
 
     ```javascript
     // bad
-    const AirbnbStyleGuide = require('./AirbnbStyleGuide');
-    module.exports = AirbnbStyleGuide.es6;
+    const CeligoStyleGuide = require('./CeligoStyleGuide');
+    module.exports = CeligoStyleGuide.es6;
 
     // ok
-    import AirbnbStyleGuide from './AirbnbStyleGuide';
-    export default AirbnbStyleGuide.es6;
+    import CeligoStyleGuide from './CeligoStyleGuide';
+    export default CeligoStyleGuide.es6;
 
     // best
-    import { es6 } from './AirbnbStyleGuide';
+    import { es6 } from './CeligoStyleGuide';
     export default es6;
     ```
 
@@ -1328,10 +1316,10 @@ Other Style Guides
 
     ```javascript
     // bad
-    import * as AirbnbStyleGuide from './AirbnbStyleGuide';
+    import * as CeligoStyleGuide from './CeligoStyleGuide';
 
     // good
-    import AirbnbStyleGuide from './AirbnbStyleGuide';
+    import CeligoStyleGuide from './CeligoStyleGuide';
     ```
 
   <a name="modules--no-export-from-import"></a><a name="10.3"></a>
@@ -1342,11 +1330,11 @@ Other Style Guides
     ```javascript
     // bad
     // filename es6.js
-    export { es6 as default } from './AirbnbStyleGuide';
+    export { es6 as default } from './CeligoStyleGuide';
 
     // good
     // filename es6.js
-    import { es6 } from './AirbnbStyleGuide';
+    import { es6 } from './CeligoStyleGuide';
     export default es6;
     ```
 
@@ -2645,14 +2633,14 @@ Other Style Guides
 
     ```javascript
     // bad
-    import { es6 } from './AirbnbStyleGuide';
+    import { es6 } from './CeligoStyleGuide';
       // ...
     export default es6;
     ```
 
     ```javascript
     // bad
-    import { es6 } from './AirbnbStyleGuide';
+    import { es6 } from './CeligoStyleGuide';
       // ...
     export default es6;↵
     ↵
@@ -2660,7 +2648,7 @@ Other Style Guides
 
     ```javascript
     // good
-    import { es6 } from './AirbnbStyleGuide';
+    import { es6 } from './CeligoStyleGuide';
       // ...
     export default es6;↵
     ```
@@ -2925,7 +2913,7 @@ Other Style Guides
     const foo = jsonData && jsonData.foo && jsonData.foo.bar && jsonData.foo.bar.baz && jsonData.foo.bar.baz.quux && jsonData.foo.bar.baz.quux.xyzzy;
 
     // bad
-    $.ajax({ method: 'POST', url: 'https://airbnb.com/', data: { name: 'John' } }).done(() => console.log('Congratulations!')).fail(() => console.log('You have failed this city.'));
+    $.ajax({ method: 'POST', url: 'https://celigo.com/', data: { name: 'John' } }).done(() => console.log('Congratulations!')).fail(() => console.log('You have failed this city.'));
 
     // good
     const foo = jsonData
@@ -2946,7 +2934,7 @@ Other Style Guides
     // good
     $.ajax({
       method: 'POST',
-      url: 'https://airbnb.com/',
+      url: 'https://celigo.com/',
       data: { name: 'John' },
     })
       .done(() => console.log('Congratulations!'))
@@ -3095,7 +3083,7 @@ Other Style Guides
   <a name="commas--dangling"></a><a name="19.2"></a>
   - [20.2](#commas--dangling) Additional trailing comma: **Yup.** eslint: [`comma-dangle`](https://eslint.org/docs/rules/comma-dangle)
 
-    > Why? This leads to cleaner git diffs. Also, transpilers like Babel will remove the additional trailing comma in the transpiled code which means you don’t have to worry about the [trailing comma problem](https://github.com/airbnb/javascript/blob/es5-deprecated/es5/README.md#commas) in legacy browsers.
+    > Why? This leads to cleaner git diffs. Also, transpilers like Babel will remove the additional trailing comma in the transpiled code which means you don’t have to worry about the [trailing comma problem](https://github.com/celigo/javascript/blob/es5-deprecated/es5/README.md#commas) in legacy browsers.
 
     ```diff
     // bad - git diff without trailing comma
@@ -3305,7 +3293,7 @@ Other Style Guides
     ```
 
   <a name="coercion--bitwise"></a><a name="21.5"></a>
-  - [22.5](#coercion--bitwise) **Note:** Be careful when using bitshift operations. Numbers are represented as [64-bit values](https://es5.github.io/#x4.3.19), but bitshift operations always return a 32-bit integer ([source](https://es5.github.io/#x11.7)). Bitshift can lead to unexpected behavior for integer values larger than 32 bits. [Discussion](https://github.com/airbnb/javascript/issues/109). Largest signed 32-bit Int is 2,147,483,647:
+  - [22.5](#coercion--bitwise) **Note:** Be careful when using bitshift operations. Numbers are represented as [64-bit values](https://es5.github.io/#x4.3.19), but bitshift operations always return a 32-bit integer ([source](https://es5.github.io/#x11.7)). Bitshift can lead to unexpected behavior for integer values larger than 32 bits. [Discussion](https://github.com/celigo/javascript/issues/109). Largest signed 32-bit Int is 2,147,483,647:
 
     ```javascript
     2147483647 >> 0; // => 2147483647
@@ -3486,12 +3474,12 @@ Other Style Guides
   - [23.8](#naming--PascalCase-singleton) Use PascalCase when you export a constructor / class / singleton / function library / bare object.
 
     ```javascript
-    const AirbnbStyleGuide = {
+    const CeligoStyleGuide = {
       es6: {
       },
     };
 
-    export default AirbnbStyleGuide;
+    export default CeligoStyleGuide;
     ```
 
   <a name="naming--Acronyms-and-Initialisms"></a>
@@ -3830,7 +3818,7 @@ Other Style Guides
     - Whichever testing framework you use, you should be writing tests!
     - Strive to write many small pure functions, and minimize where mutations occur.
     - Be cautious about stubs and mocks - they can make your tests more brittle.
-    - We primarily use [`mocha`](https://www.npmjs.com/package/mocha) and [`jest`](https://www.npmjs.com/package/jest) at Airbnb. [`tape`](https://www.npmjs.com/package/tape) is also used occasionally for small, separate modules.
+    - We primarily use [`mocha`](https://www.npmjs.com/package/mocha) and [`jest`](https://www.npmjs.com/package/jest) at Celigo. [`tape`](https://www.npmjs.com/package/tape) is also used occasionally for small, separate modules.
     - 100% test coverage is a good goal to strive for, even if it’s not always practical to reach it.
     - Whenever you fix a bug, *write a regression test*. A bug fixed without a regression test is almost certainly going to break again in the future.
 
@@ -3867,9 +3855,9 @@ Other Style Guides
 **Tools**
 
   - Code Style Linters
-    - [ESlint](https://eslint.org/) - [Airbnb Style .eslintrc](https://github.com/airbnb/javascript/blob/master/linters/.eslintrc)
-    - [JSHint](https://jshint.com/) - [Airbnb Style .jshintrc](https://github.com/airbnb/javascript/blob/master/linters/.jshintrc)
-  - Neutrino Preset - [@neutrinojs/airbnb](https://neutrinojs.org/packages/airbnb/)
+    - [ESlint](https://eslint.org/) - [Celigo Style .eslintrc](https://github.com/celigo/javascript/blob/master/linters/.eslintrc)
+    - [JSHint](https://jshint.com/) - [Celigo Style .jshintrc](https://github.com/celigo/javascript/blob/master/linters/.jshintrc)
+  - Neutrino Preset - [@neutrinojs/celigo](https://neutrinojs.org/packages/celigo/)
 
 **Other Style Guides**
 
@@ -3882,7 +3870,7 @@ Other Style Guides
 **Other Styles**
 
   - [Naming this in nested functions](https://gist.github.com/cjohansen/4135065) - Christian Johansen
-  - [Conditional Callbacks](https://github.com/airbnb/javascript/issues/52) - Ross Allen
+  - [Conditional Callbacks](https://github.com/celigo/javascript/issues/52) - Ross Allen
   - [Popular JavaScript Coding Conventions on GitHub](http://sideeffect.kr/popularconvention/#javascript) - JeongHoon Byun
   - [Multiple var statements in JavaScript, not superfluous](https://benalman.com/news/2012/05/multiple-var-statements-javascript/) - Ben Alman
 
@@ -3939,7 +3927,7 @@ Other Style Guides
   - **123erfasst**: [123erfasst/javascript](https://github.com/123erfasst/javascript)
   - **4Catalyzer**: [4Catalyzer/javascript](https://github.com/4Catalyzer/javascript)
   - **Aan Zee**: [AanZee/javascript](https://github.com/AanZee/javascript)
-  - **Airbnb**: [airbnb/javascript](https://github.com/airbnb/javascript)
+  - **Celigo**: [celigo/javascript](https://github.com/celigo/javascript)
   - **AloPeyk**: [AloPeyk](https://github.com/AloPeyk)
   - **AltSchool**: [AltSchool/javascript](https://github.com/AltSchool/javascript)
   - **Apartmint**: [apartmint/javascript](https://github.com/apartmint/javascript)
@@ -4042,7 +4030,7 @@ Other Style Guides
   - ![it](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Italy.png) **Italian**: [sinkswim/javascript-style-guide](https://github.com/sinkswim/javascript-style-guide)
   - ![jp](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Japan.png) **Japanese**: [mitsuruog/javascript-style-guide](https://github.com/mitsuruog/javascript-style-guide)
   - ![kr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/South-Korea.png) **Korean**: [ParkSB/javascript-style-guide](https://github.com/ParkSB/javascript-style-guide)
-  - ![ru](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Russia.png) **Russian**: [leonidlebedev/javascript-airbnb](https://github.com/leonidlebedev/javascript-airbnb)
+  - ![ru](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Russia.png) **Russian**: [leonidlebedev/javascript-celigo](https://github.com/leonidlebedev/javascript-celigo)
   - ![es](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Spain.png) **Spanish**: [paolocarrasco/javascript-style-guide](https://github.com/paolocarrasco/javascript-style-guide)
   - ![th](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Thailand.png) **Thai**: [lvarayut/javascript-style-guide](https://github.com/lvarayut/javascript-style-guide)
   - ![tr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Turkey.png) **Turkish**: [eraycetinay/javascript](https://github.com/eraycetinay/javascript)
@@ -4051,21 +4039,21 @@ Other Style Guides
 
 ## The JavaScript Style Guide Guide
 
-  - [Reference](https://github.com/airbnb/javascript/wiki/The-JavaScript-Style-Guide-Guide)
+  - [Reference](https://github.com/celigo/javascript/wiki/The-JavaScript-Style-Guide-Guide)
 
 ## Chat With Us About JavaScript
 
-  - Find us on [gitter](https://gitter.im/airbnb/javascript).
+  - Find us on [gitter](https://gitter.im/celigo/javascript).
 
 ## Contributors
 
-  - [View Contributors](https://github.com/airbnb/javascript/graphs/contributors)
+  - [View Contributors](https://github.com/celigo/javascript/graphs/contributors)
 
 ## License
 
 (The MIT License)
 
-Copyright (c) 2012 Airbnb
+Copyright (c) 2012 Celigo
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
